@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(fonts/Roboto-Regular.ttf);
+}
+
+:root {
+    --sidebar-color: #38bdf8;
+    --main-color: #d4d4d8;
+    --card-trim-color: #f59e0b;
+    --shadow-color: #a3a3a3;
+    --white: #f1f5f9;
+    
+    font-family: 'Roboto', 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+    
+}
+
