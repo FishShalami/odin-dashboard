@@ -4,14 +4,132 @@
 }
 
 :root {
-    --sidebar-color: #38bdf8;
+    --sidebar-color: #2590be;
     --main-color: #d4d4d8;
     --card-trim-color: #f59e0b;
     --shadow-color: #a3a3a3;
-    --white: #f1f5f9;
-    
+    --white-color: #f1f5f9;
+    --white-text: #ffffff;
+
     font-family: 'Roboto', 'Courier New', Courier, monospace;
     box-sizing: border-box;
     
+}
+
+h4 {
+    font-weight:800;
+    color: red;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 98vh;
+    width: 98vw;
+    grid-template-areas: 
+    "sidebar content";
+}
+
+.sidebar {
+    background-color: var(--sidebar-color);
+    color: var(--white-text);
+    grid-area: sidebar;
+
+    display: grid;
+    padding-left: 30px;
+    grid-template-rows: 50px 1fr 1fr;
+    align-items: start;
+
+}
+
+.user-menu,
+.user-admin {
+    font-size: 1.5rem;
+}
+
+.content {
+    background-color: var(--main-color);
+    grid-area: content;
+    
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "header"
+    "main";
+
+    
+}
+
+.header {
+    background-color: var(--white-color);
+    grid-area: header;
+    display: grid;
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    "project-title announce-title"
+    "card-group trend-announce-group";
+    padding: 20px 30px 80px;
+}
+
+.project-title {
+    grid-area: project-title;
+}
+
+.announce-title {
+    grid-area: announce-title;
+}
+
+.announcement p:first-of-type {
+    font-weight:bold;
+}
+
+.announcement p:nth-child(2) {
+    font-size: .8rem;
+}
+
+.trend-announce-group {
+    grid-area: trend-announce-group;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.card-group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    gap: 50px;
+    margin-right: 30px;
+    grid-area: card-group;
+}
+/* 
+.card-group, 
+.announce-group, 
+.trending {
+    align-self: stretch;
+} */
+
+.card {
+    background-color: var(--white-color);
+    min-height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+
+
+.announce-group, 
+.trending-group {
+    background-color: var(--white-color);
+    border-radius: 5px;
+    padding: 30px;
 }
 
