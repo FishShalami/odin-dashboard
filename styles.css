@@ -1,7 +1,7 @@
-@font-face {
-    font-family: 'Roboto';
+/* @font-face {
+    font-family: 'Roboto', sans-serif;
     src: url(fonts/Roboto-Regular.ttf);
-}
+} */
 
 :root {
     --sidebar-color: #2590be;
@@ -132,13 +132,13 @@ body {
     grid-column: 1/2;
     align-self: center;
     justify-self: center;
+    
 }
 
 .greeting {
     display: grid;
     grid-row: 1 / 3;
     grid-column: 2/3;
-    /* align-items: start; */
 }
 
 .greeting>p:first-of-type {
@@ -170,14 +170,17 @@ button {
     border-radius: 20px;
     font-size: 1.5rem;
     height: 2.5rem;
-    
+}
 
+button:hover {
+    background-color: var(--card-trim-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
 }
 
 .main {
     grid-area: main;
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas: 
     "project-title announce-title"
@@ -228,7 +231,22 @@ button {
     padding: 20px;
     border-radius: 10px;
     border-left: 8px solid var(--card-trim-color);
-    
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    position: relative;
+
+}
+
+.card .option-bar {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    position: absolute;
+    top: 235px;
+    right: 15px;
+    /* width: 200px; */
+    /* height: 100px; */
 }
 
 .announce-group, 
@@ -236,17 +254,49 @@ button {
     background-color: var(--white-color);
     border-radius: 5px;
     padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+}
+
+.trending-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.trending-user {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+    /* place-items: center; */
+}
+
+.trending-user span {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 0;
+}
+
+.trending-user  p {
+    margin: 0;
+    text-align: left;
+
+}
+
+.trending-user p:last-of-type {
+    color: var(--shadow-color)
+
+}
+
+.trending-user p a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
 
 .sidebar > h1 {
     padding-left: 40px;
-    /* content: url(images/home.svg);
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    vertical-align: middle;
-    filter: invert(1) brightness(100); */
+
 }
 
 
@@ -347,5 +397,4 @@ button {
     height: 30px;
     margin-right: 10px;
     vertical-align: middle;
-    /* filter: invert(1) brightness(100); */
 }
